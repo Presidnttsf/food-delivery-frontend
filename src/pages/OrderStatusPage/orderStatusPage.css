@@ -1,0 +1,83 @@
+.status-container {
+  max-width: 700px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.order-id {
+  margin: 15px 0;
+  color: var(--muted);
+}
+
+.order-id span {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* TIMELINE */
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0;
+  position: relative;
+}
+
+/* LINE BACKGROUND */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #ddd;
+  z-index: 0;
+}
+
+/* STEP */
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ddd;
+  margin-bottom: 8px;
+  transition: 0.3s;
+}
+
+/* ACTIVE STATE */
+.step.active .circle {
+  background: var(--primary);
+  transform: scale(1.2);
+}
+
+.step.active .label {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.label {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* STATUS BOX */
+.status-box {
+  margin-top: 20px;
+  padding: 15px;
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* LOADER */
+.status-loader {
+  text-align: center;
+  padding: 80px;
+}

@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--gray);
+  color: var(--text);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: #e0e0e0;   /* visible gray */
+  color: #333;           /* readable text */
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-weight: 500;
+  border: none;
+}
+
+/* hover effect */
+button:hover {
+  background: var(--primary); /* #E23744 */
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* active click effect */
+button:active {
+  transform: scale(0.96);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
