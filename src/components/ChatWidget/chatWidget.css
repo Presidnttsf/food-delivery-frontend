@@ -41,7 +41,7 @@
 /* HEADER */
 .chat-header {
   background: var(--primary);
-  color: white;
+  color: rgb(137, 7, 7);
   padding: 10px;
   display: flex;
   justify-content: space-between;
@@ -50,7 +50,7 @@
 
 .chat-header button {
   background: transparent;
-  color: white;
+  color: rgb(193, 11, 11);
   font-size: 16px;
   border: none;
   cursor: pointer;
