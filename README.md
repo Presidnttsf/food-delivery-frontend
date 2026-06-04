@@ -2,7 +2,23 @@
 
 A full-stack Food Delivery Order Management application built as part of a Senior Full Stack Developer Assessment.
 
-The application allows users to browse menu items, add products to a cart, place food orders, and track order status in real time through a modern and responsive user interface.
+The application allows users to browse menu items, add products to their cart, place food orders, and track order status in real time through a modern and responsive user interface.
+
+---
+
+## 🚀 Live Demo
+
+### Frontend
+
+https://food-delivery-frontend-opal.vercel.app/
+
+### Backend API
+
+https://food-delivery-backend-p7yv.onrender.com
+
+### GitHub Repository
+
+https://github.com/Presidnttsf/food-delivery-frontend
 
 ---
 
@@ -12,22 +28,20 @@ The application allows users to browse menu items, add products to a cart, place
 
 * Full Stack Developer
 * React.js | Node.js | Express.js | MongoDB
-* GitHub: [Add your GitHub profile link]
-* LinkedIn: [Add your LinkedIn profile link]
 
 ---
 
-# 🚀 Project Overview
+# 📖 Project Overview
 
-This project simulates a real-world food delivery platform similar to Zomato or Swiggy.
+This project simulates a real-world food delivery platform similar to Zomato and Swiggy.
 
 Users can:
 
-* View available food items
-* Search menu items
+* Browse available menu items
+* Search food items
 * Add items to cart
 * Manage item quantities
-* Place orders
+* Place food orders
 * Enter delivery information
 * Track order status
 * Receive simulated real-time order updates
@@ -56,7 +70,7 @@ Users can:
 
 ### Frontend
 
-* Vercel / Netlify
+* Vercel
 
 ### Backend
 
@@ -66,7 +80,7 @@ Users can:
 
 # ✨ Features
 
-## Menu Management
+## 🍕 Menu Management
 
 * Fetch menu items from API
 * Responsive food card layout
@@ -76,7 +90,7 @@ Users can:
 * Loading states
 * Error handling
 
-## Cart Management
+## 🛒 Cart Management
 
 * Add items to cart
 * Increase quantity
@@ -84,8 +98,9 @@ Users can:
 * Remove items
 * Cart summary
 * Total amount calculation
+* Automatic cart clearing after successful order placement
 
-## Checkout
+## 📦 Checkout
 
 * Customer Name
 * Delivery Address
@@ -93,28 +108,29 @@ Users can:
 * Form validation
 * Order placement
 
-## Order Tracking
+## 🚚 Order Tracking
 
-* Order ID generation
+* Unique Order ID generation
 * Order status timeline
 * Real-time status polling
 * Automatic status progression
 
-Statuses:
+### Supported Statuses
 
 1. ORDER_RECEIVED
 2. PREPARING
 3. OUT_FOR_DELIVERY
 4. DELIVERED
 
-## UI/UX
+## 🎨 UI/UX Features
 
 * Modern card-based design
-* Mobile responsive layout
+* Mobile-responsive layout
 * Smooth hover effects
-* Food delivery inspired theme
-* Skeleton loading for images
+* Food-delivery inspired design
+* Skeleton image loading
 * Reusable component architecture
+* Professional order tracking timeline
 
 ---
 
@@ -198,15 +214,11 @@ Request Body:
 }
 ```
 
----
-
 ### Get Order By ID
 
 ```http
 GET /orders/:id
 ```
-
----
 
 ### Update Order Status
 
@@ -226,7 +238,7 @@ Request Body:
 
 # ⚡ Real-Time Order Simulation
 
-To simulate real-time delivery tracking, the backend automatically updates order status using scheduled transitions:
+The backend simulates real-time delivery tracking using automatic status transitions.
 
 ```text
 ORDER_RECEIVED
@@ -238,15 +250,15 @@ OUT_FOR_DELIVERY
 DELIVERED
 ```
 
-The frontend polls the API every few seconds and updates the timeline automatically.
+The frontend polls the API periodically and updates the timeline automatically.
 
 ---
 
 # 🧠 State Management
 
-The application uses React Context API.
+Implemented using React Context API.
 
-Cart features:
+Features:
 
 * Add item
 * Remove item
@@ -266,16 +278,16 @@ useDebounce(search, 300);
 Benefits:
 
 * Reduced unnecessary re-renders
-* Better user experience
 * Improved performance
+* Better user experience
 
 ---
 
 # 🧪 Testing Strategy
 
-The project follows Test-Driven Development principles.
+The project follows Test-Driven Development (TDD) principles.
 
-Areas covered:
+Covered areas:
 
 * API endpoint validation
 * Order creation
@@ -284,7 +296,7 @@ Areas covered:
 * Cart functionality
 * Component rendering
 
-Suggested tools:
+Recommended Tools:
 
 * Jest
 * React Testing Library
@@ -297,16 +309,13 @@ Suggested tools:
 ## Clone Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Presidnttsf/food-delivery-frontend.git
 ```
 
-## Frontend
+## Frontend Setup
 
 ```bash
-cd frontend
-
 npm install
-
 npm run dev
 ```
 
@@ -316,40 +325,25 @@ Runs on:
 http://localhost:5173
 ```
 
----
+## Environment Variables
 
-## Backend
+Create a `.env` file:
 
-```bash
-cd backend
-
-npm install
-
-npm run dev
-```
-
-Runs on:
-
-```text
-http://localhost:5000
+```env
+VITE_API_URL=https://food-delivery-backend-p7yv.onrender.com
 ```
 
 ---
 
 # 🌐 Deployment
 
-## Frontend
+### Frontend
 
-Deploy using:
+Hosted on Vercel
 
-* Vercel
-* Netlify
+### Backend
 
-## Backend
-
-Deploy using:
-
-* Render
+Hosted on Render
 
 ---
 
@@ -358,7 +352,7 @@ Deploy using:
 * JWT Authentication
 * User Accounts
 * Payment Gateway Integration
-* WebSocket Real-Time Tracking
+* WebSocket-based Real-Time Tracking
 * Push Notifications
 * Order History
 * Admin Dashboard
@@ -372,14 +366,14 @@ Deploy using:
 AI tools were used during development for:
 
 * Architecture planning
-* Component generation
+* UI component generation
 * API integration guidance
 * Debugging assistance
 * UI/UX improvements
 * Test case suggestions
 * Code optimization
 
-All generated code was reviewed, customized, integrated, and tested manually.
+All generated code was reviewed, customized, integrated, and tested manually before final implementation.
 
 ---
 
@@ -389,7 +383,7 @@ This project was created for assessment and educational purposes.
 
 ---
 
-## Thank You
+## 🙏 Thank You
 
 Thank you for reviewing this project.
 
