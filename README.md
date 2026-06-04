@@ -308,9 +308,13 @@ Recommended Tools:
 
 ## Clone Repository
 
-```bash
+```bash for frontend
 git clone https://github.com/Presidnttsf/food-delivery-frontend.git
 ```
+```bash for Backend 
+
+git clone https://github.com/Presidnttsf/food-delivery-backend
+
 
 ## Frontend Setup
 
