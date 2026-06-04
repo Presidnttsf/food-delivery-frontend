@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getOrderById } from "../../services/orderService";
+import {
+  getOrderById,
+  updateOrderToNextStatus,
+} from "../../services/orderService";
 import OrderTimeline from "../../components/OrderTimeline/OrderTimeline";
 import "./orderStatusPage.css";
 
-const steps = [
-  "Order Received",
-  "Preparing",
-  "Out for Delivery",
-  "Delivered"
-];
+const stepLabels = {
+  ORDER_RECEIVED: "Order Received",
+  PREPARING: "Preparing",
+  OUT_FOR_DELIVERY: "Out for Delivery",
+  DELIVERED: "Delivered",
+};
 
 const OrderStatusPage = () => {
   const { id } = useParams();
@@ -22,7 +25,7 @@ const OrderStatusPage = () => {
       const data = await getOrderById(id);
       setOrder(data);
     } catch (err) {
-      console.log("Error fetching order");
+      console.log(err);
     } finally {
       setLoading(false);
     }
@@ -30,41 +33,60 @@ const OrderStatusPage = () => {
 
   useEffect(() => {
     fetchOrder();
-
-    // 🔥 REAL-TIME SIMULATION (Polling)
-    const interval = setInterval(() => {
-      fetchOrder();
-    }, 4000);
-
-    return () => clearInterval(interval);
   }, [id]);
 
+  const handleNextStatus = async () => {
+    try {
+      const updatedOrder = await updateOrderToNextStatus(id);
+
+      // If API returns order directly
+      setOrder(updatedOrder);
+
+      // If API returns { data: order }
+      // setOrder(updatedOrder.data);
+
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   if (loading) {
-    return <div className="status-loader">Loading order status...</div>;
+    return (
+      <div className="status-loader">
+        Loading order status...
+      </div>
+    );
   }
 
   if (!order) {
     return <div className="error">Order not found</div>;
   }
 
-  const currentIndex = steps.indexOf(order.status);
-
   return (
     <div className="status-container container">
-
       <h2>Order Tracking</h2>
+
       <div className="order-id">
         Order ID: <span>{order._id}</span>
       </div>
 
-      {/* TIMELINE */}
-<OrderTimeline currentStatus={order.status} />
-    
-      {/* STATUS INFO */}
-      <div className="status-box">
-        Current Status: <b>{order.status}</b>
-      </div>
+      <OrderTimeline currentStatus={order.status} />
 
+      <div className="status-box">
+        <p>
+          Current Status:
+          <b> {stepLabels[order.status]}</b>
+        </p>
+
+        <button
+          onClick={handleNextStatus}
+          disabled={order.status === "DELIVERED"}
+        >
+          {order.status === "DELIVERED"
+            ? "Order Delivered"
+            : "Update Status"}
+        </button>
+      </div>
     </div>
   );
 };

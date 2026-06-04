@@ -45,7 +45,7 @@ const CartPage = () => {
 
         <div className="summary-row total">
           <span>Total</span>
-          <span>${totalAmount}</span>
+          <span>${totalAmount.toFixed(3)}</span>
         </div>
 
         <button
