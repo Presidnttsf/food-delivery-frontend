@@ -97,8 +97,7 @@
 }
 
 .chat-input button {
-  background: var(--secondary);
-  padding: 10px 15px;
+    padding: 10px 15px;
   border: none;
   cursor: pointer;
 }
