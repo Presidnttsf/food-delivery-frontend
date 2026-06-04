@@ -28,7 +28,7 @@ const Navbar = () => {
 
       {/* RIGHT - CTA */}
       <div className="nav-cta">
-        <button>Order Now</button>
+      <Link to="/">  <button>Order Now</button> </Link>
       </div>
 
     </nav>

@@ -1,13 +1,14 @@
 import "./cartItem.css";
 import { useCart } from "../../context/CartContext";
+import API from "../../services/api";
 
 const CartItem = ({ item }) => {
   const { updateQty, removeFromCart } = useCart();
-
+const IMAGE_BASE_URL = API.defaults.baseURL;
   return (
     <div className="cart-item">
 
-      <img src={item.image} alt={item.name} />
+      <img   src={`${IMAGE_BASE_URL}${item.image}`} alt={item.name} />
 
       <div className="cart-info">
         <h4>{item.name}</h4>
@@ -34,12 +35,12 @@ const CartItem = ({ item }) => {
       </div>
 
       {/* REMOVE */}
-      <button
-        className="remove-btn"
-        onClick={() => removeFromCart(item._id)}
-      >
-        ✕
-      </button>
+        <button
+    className="delete-btn"
+    onClick={() => removeFromCart(item._id)}
+  >
+    🗑
+  </button>
 
     </div>
   );

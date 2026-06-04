@@ -18,6 +18,7 @@
 
 .hero h1 {
   font-size: 2rem;
+
 }
 
 .hero p {
@@ -32,16 +33,19 @@
   justify-content: center;
 }
 
-.hero-search input {
-  padding: 10px;
-  border-radius: 8px;
+.hero-search  {
+  padding: 14px;
+  border-radius: 28px;
   border: none;
-  width: 200px;
+  width: min(500px, 90vw);
+  font-size: 1rem;
 }
 
-.hero-search button {
-  background: var(--primary);
-  color: white;
-  padding: 10px 15px;
-  border-radius: 8px;
+.search-input {
+  width: 250px;
+  padding: 14px 20px;
+  border-radius: 28px;
+  border: none;
+  font-size: 16px;
 }
+

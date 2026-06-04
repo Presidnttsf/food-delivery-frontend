@@ -5,13 +5,13 @@ import { createOrder } from "../../services/orderService";
 import { useNavigate } from "react-router-dom";
 
 const CheckoutPage = () => {
-  const { cart } = useCart();
+  const { cart, clearCart } = useCart();
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
     name: "",
     address: "",
-    phone: ""
+    phone: "",
   });
 
   const [loading, setLoading] = useState(false);
@@ -25,8 +25,8 @@ const CheckoutPage = () => {
     if (!form.name || !form.address || !form.phone) {
       return "All fields are required";
     }
-    if (form.phone.length < 10) {
-      return "Enter valid phone number";
+    if (!/^\d{10}$/.test(form.phone)) {
+      return "Please enter a valid 10-digit phone number";
     }
     if (cart.length === 0) {
       return "Cart is empty";
@@ -48,21 +48,28 @@ const CheckoutPage = () => {
       setError("");
 
       const orderData = {
-        customer: form,
-        items: cart,
-        totalAmount: cart.reduce(
-          (acc, item) => acc + item.price * item.qty,
-          0
-        )
-      };
+        customerName: form.name,
+        address: form.address,
+        phone: form.phone,
 
+        items: cart.map((item) => ({
+          menuItemId: item._id,
+          quantity: item.qty,
+        })),
+      };
       const res = await createOrder(orderData);
 
+      clearCart();
       // assuming backend returns order._id
-      navigate(`/order/${res._id}`);
-
+      navigate(`/order/${res.orderId}`);
     } catch (err) {
-      setError("Failed to place order. Try again.");
+      console.log("Order Error:", err);
+      console.log("Response:", err.response?.data);
+      setError(
+        err.response?.data?.errors?.join(", ") ||
+          err.response?.data?.message ||
+          "Failed to place order. Try again.",
+      );
     } finally {
       setLoading(false);
     }
@@ -70,11 +77,9 @@ const CheckoutPage = () => {
 
   return (
     <div className="checkout container">
-
       <h2>Checkout</h2>
 
       <form className="checkout-form" onSubmit={handleSubmit}>
-
         <input
           type="text"
           name="name"
@@ -104,7 +109,6 @@ const CheckoutPage = () => {
         <button disabled={loading}>
           {loading ? "Placing Order..." : "Place Order"}
         </button>
-
       </form>
     </div>
   );

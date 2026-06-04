@@ -57,11 +57,18 @@ const filteredMenu = menu.filter((item) =>
       <div className="container">
         <h2 className="section-title">Popular Items</h2>
 
-        <div className="grid">
-          {filteredMenu?.map((item) => (
-            <FoodCard key={item._id} item={item} />
-          ))}
-        </div>
+      <div className="grid">
+  {filteredMenu.length > 0 ? (
+    filteredMenu.map((item) => (
+      <FoodCard key={item._id} item={item} />
+    ))
+  ) : (
+    <div className="no-items">
+      🍽️ No items found
+      <p>Try searching something else</p>
+    </div>
+  )}
+</div>
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ const Footer = () => {
 
         <div>
           <h3>🍔 FoodExpress</h3>
-          <p>Delivering happiness at your doorstep</p>
+          <p>Delivering happiness at your doorstep Tauseef Akhtar</p>
         </div>
 
         <div>
@@ -21,7 +21,7 @@ const Footer = () => {
         <div>
           <h4>Contact</h4>
           <p>support@foodexpress.com</p>
-          <p>+91 98765 43210</p>
+          <p>+91 9021980236</p>
         </div>
 
       </div>

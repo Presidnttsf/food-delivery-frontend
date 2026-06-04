@@ -53,28 +53,13 @@ const OrderStatusPage = () => {
     <div className="status-container container">
 
       <h2>Order Tracking</h2>
-<OrderTimeline currentStatus={order.status} />
       <div className="order-id">
         Order ID: <span>{order._id}</span>
       </div>
 
       {/* TIMELINE */}
-      <div className="timeline">
-
-        {steps.map((step, index) => (
-          <div
-            key={step}
-            className={`step ${
-              index <= currentIndex ? "active" : ""
-            }`}
-          >
-            <div className="circle"></div>
-            <div className="label">{step}</div>
-          </div>
-        ))}
-
-      </div>
-
+<OrderTimeline currentStatus={order.status} />
+    
       {/* STATUS INFO */}
       <div className="status-box">
         Current Status: <b>{order.status}</b>

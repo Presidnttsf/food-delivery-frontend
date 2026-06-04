@@ -55,3 +55,20 @@
   color: red;
   padding: 50px;
 }
+.no-items {
+  text-align: center;
+  padding: 60px;
+  color: var(--muted);
+  font-size: 1.1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-items p {
+  font-size: 0.9rem;
+  color: #999;
+}

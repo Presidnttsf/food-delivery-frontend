@@ -31,7 +31,7 @@
 .checkout-form button {
   padding: 12px;
   background: var(--primary);
-  color: white;
+  color: black;
   border-radius: 10px;
   font-size: 1rem;
 }
