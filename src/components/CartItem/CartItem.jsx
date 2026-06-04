@@ -12,7 +12,7 @@ const IMAGE_BASE_URL = API.defaults.baseURL;
 
       <div className="cart-info">
         <h4>{item.name}</h4>
-        <p>₹{item.price}</p>
+        <p>${item.price}</p>
       </div>
 
       {/* QUANTITY CONTROLS */}
@@ -25,7 +25,7 @@ const IMAGE_BASE_URL = API.defaults.baseURL;
           -
         </button>
 
-        <span>{item.qty}</span>
+        <span style={{padding: "5px"}}>{item.qty}</span>
 
         <button
           onClick={() => updateQty(item._id, item.qty + 1)}

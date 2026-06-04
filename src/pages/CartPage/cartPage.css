@@ -59,3 +59,20 @@
   text-align: center;
   padding: 80px;
 }
+
+@media (max-width: 768px) {
+  .cart-page {
+    flex-direction: column;
+  }
+
+  .cart-items {
+    order: 1;
+  }
+
+  .cart-summary {
+    order: 2;
+    width: 100%;
+    position: static;
+    margin-top: 20px;
+  }
+} 
