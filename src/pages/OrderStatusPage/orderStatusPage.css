@@ -83,13 +83,13 @@
 }
 
 .status-cta button {
-  background: var(--primary);
-  color: rgb(224, 212, 212);
+  background: transparent;
+  color: rgb(55, 183, 16);
   padding: 8px 14px;
   border-radius: 8px;
   transition: 0.3s;
 }
 
 .status-cta button:hover {
-  background: #c81e2d;
+  background: #cfc2c3;
 }
