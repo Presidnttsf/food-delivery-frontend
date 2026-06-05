@@ -72,19 +72,20 @@ const OrderStatusPage = () => {
 
       <OrderTimeline currentStatus={order.status} />
 
-      <div className="status-box">
+      <div className="status-cta">
         <p>
           Current Status:
           <b> {stepLabels[order.status]}</b>
         </p>
 
         <button
+        
           onClick={handleNextStatus}
           disabled={order.status === "DELIVERED"}
         >
           {order.status === "DELIVERED"
             ? "Order Delivered"
-            : "Update Status"}
+            : "Check Status"}
         </button>
       </div>
     </div>
